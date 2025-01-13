@@ -1,6 +1,7 @@
 <div align="justify"
 
 # guess-pkmn
+
 >✒️ __Autor__:  Nabil L.A. ([@nalleon](https://github.com/nalleon))
 
 Repositorio dedicado a un pequeño proyecto del módulo de DAD acerca de adividar un pokémon.
