@@ -1,6 +1,6 @@
-<div align="justify"
+<div align="justify">
 
-# guess-pkmn
+# Adivina el pokémon
 
 > ✒️ __Autor__:  Nabil L.A. ([@nalleon](https://github.com/nalleon)) 
 
