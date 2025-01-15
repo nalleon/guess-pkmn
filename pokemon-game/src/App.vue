@@ -1,12 +1,16 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+    <PokemonGame/>
 </template>
+
+<script lang="ts">
+  import PokemonGame from './components/views/PokemonGame.vue'
+
+  export default {
+    components: {
+      PokemonGame
+    }
+  }
+</script>
 
 <style scoped>
 

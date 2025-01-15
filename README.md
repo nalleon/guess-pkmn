@@ -15,6 +15,7 @@ Repositorio dedicado a un pequeño proyecto del módulo de DAD acerca de adivida
   - [Configuración de Vue](#configuración-vue)
   - [Limpieza del proyecto](#limpieza-del-proyecto)
   - [Implementación de Tailwind CSS](#implementación-de-tailwind-css)
+- [Reto 02](#reto-02)
 - [Extra](#extra)
 
 <div align="center">
@@ -189,6 +190,96 @@ Finalmente añadiremos unos estilos de tailwind a al etiqueta h1 pa¶æ comproba
 <br>
 
 ***
+
+
+## Reto 02
+
+Para este reto lo primero que debemos hacere es eliminar la carpeta original de components para remplazarla con nuestro equivalente, ya que, esta no cumplía con la screaming architecture. 
+
+
+<div align="center" border="1px">
+<img src="./img/r2-01-01.png" width="700">
+</div>
+<br>
+
+***
+
+Tras esto, crearemos una nueva carpeta llamada modules y dentro de este otra llamada pokemon. Observamos como la ruta final sería src/modules/pokemon. 
+
+
+<div align="center" border="1px">
+<img src="./img/r2-01-02.png" width="700">
+</div>
+<br>
+
+***
+
+> ❓ ¿Qué es un composable en VueJS y cual es la nomenclatura común que se utiliza en los ficheros que contiene?
+
+Composable es una carácteristica nacida con Vue 3, la cual permite a los desarrolladores escribir código tanto conciso como claro. 
+
+Seguidamente crearemos la carpeta components y ahí a su vez crearemos carpeta views. En esta última, crearemos el componente PokemonGame.vue.
+
+
+> ❓ ¿Cuál crees que será la lógica que irá dentro de este archivo?
+
+Dado que se llama PokemonGame, podemos afirmar que se va a encargar de mostrar nuestro juego al cliente.
+
+<div align="center" border="1px">
+<img src="./img/r2-01-03.png" width="700">
+</div>
+<br>
+
+***
+
+Tras generar la estructura básica del componente con la extension Vue3 Composition Snippets y el snippet vcc para definir que es un componente de composition. Seguidamente añadiremos la siguiente etiqueta HTML y con el siguiente contenido:
+
+```ts
+<section class="flex flex-col justify-center items-center w-screen h-screen">
+  <h1 class="text-3xl"> Espere por favor</h1>
+  <h3 class="animate-pulse">Cargando Pokemón</h3>
+</section>
+```
+
+> ❓ ¿Para qué sirven las clases que hemos añadido?
+
+Hemos añadidos clases de Tailwind para darle unos estilos a nuestra seccción.
+
+
+Para ver nuestros cambios en la aplicación debemos de actualizar el App.vue con nuestro componente:
+
+```ts
+<template>
+    <PokemonGame/>
+</template>
+
+<script lang="ts">
+  import PokemonGame from './components/views/PokemonGame.vue'
+
+  export default {
+    components: {
+      PokemonGame
+    }
+  }
+</script>
+
+<style scoped>
+
+</style>
+```
+
+<div align="center" border="1px">
+<img src="./img/r2-01-04.png" width="700">
+</div>
+<br>
+
+***
+
+> ❓ Utilizando una directiva de VueJS, ¿cómo ocultaríamos esta sección por completo?
+
+
+
+Tras esto, añadiremos una nueva seccion de 
 
 
 ## Extra
