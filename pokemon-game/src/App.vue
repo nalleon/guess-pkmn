@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-  import PokemonGame from './components/views/PokemonGame.vue'
+  import PokemonGame from './views/PokemonGame.vue'
 
   export default {
     components: {
