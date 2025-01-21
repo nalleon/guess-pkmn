@@ -277,10 +277,120 @@ Para ver nuestros cambios en la aplicación debemos de actualizar el App.vue con
 
 > ❓ Utilizando una directiva de VueJS, ¿cómo ocultaríamos esta sección por completo?
 
+La podemos ocultar de varias maneras, pero en este caso hemos optado por utilizar v-show.
+
+```ts
+<template>
+  <section v-show="isVisible" class="flex flex-col justify-center items-center w-screen h-screen">
+    <h1 class="text-3xl"> Espere por favor</h1>
+    <h3 class="animate-pulse">Cargando Pokemón</h3>
+  </section>
+
+</template>
+
+<script lang="ts">
+  import { defineComponent, ref } from 'vue';
+
+  export default defineComponent({
+    name:'PokemonGame',
+
+    setup() {
+      const isVisible = ref(false);
+      return isVisible;
+    }
+
+    }
+  )
+</script>
+```
 
 
-Tras esto, añadiremos una nueva seccion de 
 
+Tras esto, añadiremos una nueva seccion de con un titulo h1 y donde añadiremos nuestros nuevos componentes.
+
+```ts
+<template>
+  <section v-show="isVisible" class="flex flex-col justify-center items-center w-screen h-screen">
+    <h1 class="text-3xl"> Espere por favor</h1>
+    <h3 class="animate-pulse">Cargando Pokemón</h3>
+  </section>
+  <section class="flex flex-col justify-center items-center w-screen h-screen">
+    <h1 class="text-3xl">¿Cúal es este pokémon?</h1>
+      <PokemonPicture/>
+      <PokemonOptions/>
+  </section>
+
+</template>
+
+<script lang="ts">
+  import { defineComponent, ref } from 'vue';
+  import PokemonPicture from '../components/pokemon/PokemonPicture.vue';
+  import PokemonOptions from '../components/pokemon/PokemonOptions.vue';
+
+  export default defineComponent({
+    name:'PokemonGame',
+
+    setup() {
+      const isVisible = ref(false);
+      return isVisible;
+    }
+
+    }
+  )
+</script>
+```
+
+- Componentes:
+
+
+```ts
+<template>
+    <div>
+        <h2>En construccion</h2>
+    </div>
+</template>
+
+<script lang="ts">
+  import { defineComponent } from 'vue';
+
+  export default defineComponent({
+    name:'PokemonOptions',
+
+    }
+  )
+</script>
+
+<style scoped>
+</style>
+
+<template>
+    <div>
+        <h2>En construccion</h2>
+    </div>
+</template>
+
+
+<script lang="ts">
+  import { defineComponent } from 'vue';
+
+  export default defineComponent({
+    name:'PokemonPicture',
+
+    }
+  )
+</script>
+
+
+<style scoped>
+</style>
+```
+
+En cuanto a la lógica de los componentes, podemos afirmar que PokemonPicture se encargara de mostrar la imagen oscurecidad y revelada del pokemon durante el juego, mientras que, PokemonOptions será para el manejo de las opciones de los nombres.
+
+<div align="center" border="1px">
+<img src="./img/r2-01-05.png" width="700">
+</div>
+<br>
 
 ## Extra
 

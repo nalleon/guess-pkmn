@@ -20,9 +20,7 @@
     name:'PokemonGame',
 
     setup() {
-
       const isVisible = ref(false);
-
       return isVisible;
     }
 
