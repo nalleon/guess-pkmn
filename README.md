@@ -194,9 +194,9 @@ Finalmente añadiremos unos estilos de tailwind a al etiqueta h1 pa¶æ comproba
 ***
 
 
-## Reto 02
+### Reto 02
 
-### Creación de estructura de carpetas
+#### Creación de estructura de carpetas
 
 Para este reto lo primero que debemos hacere es eliminar la carpeta original de components para remplazarla con nuestro equivalente, ya que, esta no cumplía con la screaming architecture. 
 
@@ -235,7 +235,7 @@ Dado que se llama PokemonGame, podemos afirmar que se va a encargar de mostrar n
 
 ***
 
-### Estructura básica del componente
+#### Estructura básica del componente
 
 Tras generar la estructura básica del componente con la extension Vue3 Composition Snippets y el snippet vcc para definir que es un componente de composition. Seguidamente añadiremos la siguiente etiqueta HTML y con el siguiente contenido:
 
