@@ -1,9 +1,9 @@
 <template>
-  <section v-show="isVisible" class="flex flex-col justify-center items-center w-screen h-screen">
+  <!--<section v-show="isVisible" class="flex flex-col justify-center items-center w-screen h-screen">
     <h1 class="text-3xl"> Espere por favor</h1>
     <h3 class="animate-pulse">Cargando Pokemón</h3>
-  </section>
-  <section class="flex flex-col justify-center items-center w-screen h-screen">
+  </section>-->
+  <section class="flex flex-col justify-center items-center w-screen h-screen bg-">
     <h1 class="text-3xl">¿Cúal es este pokémon?</h1>
       <PokemonPicture/>
       <PokemonOptions/>
@@ -13,8 +13,8 @@
 
 <script lang="ts">
   import { defineComponent, ref } from 'vue';
-  import PokemonPicture from '../components/pokemon/PokemonPicture.vue';
-  import PokemonOptions from '../components/pokemon/PokemonOptions.vue';
+  import PokemonPicture from '../modules/pokemon/PokemonPicture.vue';
+  import PokemonOptions from '../modules/pokemon/PokemonOptions.vue';
 
   export default defineComponent({
     name:'PokemonGame',
@@ -22,6 +22,12 @@
     setup() {
       const isVisible = ref(false);
       return isVisible;
+
+    },
+
+    components: {
+      PokemonPicture,
+      PokemonOptions
     }
 
     }
@@ -29,5 +35,4 @@
 </script>
 
 <style scoped>
-
 </style>

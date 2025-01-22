@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <h2>En construccion</h2>
-    </div>
+    <section class="flex flex-col justify-center items-center">
+      <img class="brightness-0 h-[200px]" :src=url>
+    </section>
 </template>
 
 
@@ -10,7 +10,13 @@
 
   export default defineComponent({
     name:'PokemonPicture',
+    setup() {
+        const url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/248.png'
 
+        return {
+          url
+        }
+      },
     }
   )
 </script>
