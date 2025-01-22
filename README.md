@@ -18,6 +18,9 @@ Repositorio dedicado a un pequeño proyecto del módulo de DAD acerca de adivida
 - [Reto 02](#reto-02)
   - [Creación de la estructura de carpetas](#creación-de-estructura-de-carpetas)
   - [Definición de la estructura básica del componente](#estructura-básica-del-componente)
+- [Reto 03](#reto-03)
+  - [Programando el componente PokemonPicture.vue (básico)](#programando-el-componente-pokemonpicturevue-básico)
+  - [Programando el componente PokemonOptions.vue (básico)](#programando-el-componente-pokemonoptionsvue-básico)
 - [Extra](#extra)
 
 <div align="center">
@@ -239,7 +242,7 @@ Dado que se llama PokemonGame, podemos afirmar que se va a encargar de mostrar n
 
 Tras generar la estructura básica del componente con la extension Vue3 Composition Snippets y el snippet vcc para definir que es un componente de composition. Seguidamente añadiremos la siguiente etiqueta HTML y con el siguiente contenido:
 
-```ts
+```vue
 <section class="flex flex-col justify-center items-center w-screen h-screen">
   <h1 class="text-3xl"> Espere por favor</h1>
   <h3 class="animate-pulse">Cargando Pokemón</h3>
@@ -253,7 +256,7 @@ Hemos añadidos clases de Tailwind para darle unos estilos a nuestra seccción.
 
 Para ver nuestros cambios en la aplicación debemos de actualizar el App.vue con nuestro componente:
 
-```ts
+```vue
 <template>
     <PokemonGame/>
 </template>
@@ -284,7 +287,7 @@ Para ver nuestros cambios en la aplicación debemos de actualizar el App.vue con
 
 La podemos ocultar de varias maneras, pero en este caso hemos optado por utilizar v-show.
 
-```ts
+```vue
 <template>
   <section v-show="isVisible" class="flex flex-col justify-center items-center w-screen h-screen">
     <h1 class="text-3xl"> Espere por favor</h1>
@@ -313,7 +316,7 @@ La podemos ocultar de varias maneras, pero en este caso hemos optado por utiliza
 
 Tras esto, añadiremos una nueva seccion de con un titulo h1 y donde añadiremos nuestros nuevos componentes.
 
-```ts
+```vue
 <template>
   <section v-show="isVisible" class="flex flex-col justify-center items-center w-screen h-screen">
     <h1 class="text-3xl"> Espere por favor</h1>
@@ -338,6 +341,11 @@ Tras esto, añadiremos una nueva seccion de con un titulo h1 y donde añadiremos
     setup() {
       const isVisible = ref(false);
       return isVisible;
+    },
+
+    components: {
+      PokemonPicture,
+      PokemonOptions
     }
 
     }
@@ -348,7 +356,7 @@ Tras esto, añadiremos una nueva seccion de con un titulo h1 y donde añadiremos
 - Componentes:
 
 
-```ts
+```vue
 <template>
     <div>
         <h2>En construccion</h2>
@@ -396,6 +404,80 @@ En cuanto a la lógica de los componentes, podemos afirmar que PokemonPicture se
 <img src="./img/r2-01-05.png" width="700">
 </div>
 <br>
+
+### Reto 03
+
+### Programando el componente PokemonPicture.vue (básico)
+
+Lo primero que haremos es importar la imagen de un pokemon desde la pokeapi. En este caso hemos escogido al pokemon 248, Tyranitar. Ya que aún no estamos trabajando con axios para las peticiones a la api, simplemente añadiremos la imagen.
+
+```vue
+<template>
+    <section class="flex flex-col justify-center items-center">
+      <img :src=url>
+    </section>
+</template>
+
+
+<script lang="ts">
+  import { defineComponent } from 'vue';
+
+  export default defineComponent({
+    name:'PokemonPicture',
+    setup() {
+        const url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/248.png'
+
+        return {
+          url
+        }
+      },
+    }
+  )
+</script>
+```
+<div align="center" border="1px">
+<img src="./img/r3-01-01.png" width="700">
+</div>
+<br>
+
+Ya que, para la lógica del juego no tiene sentido ver el pokemon como tal, añadiremos unos estilos con TailwindCSS. Utilizaremos las clases: brightness-0 y h-[200px].
+
+> ❓ ¿Para qué sirve?
+
+
+brightness-0 es para bajarle el brillo al 0 y volver la imagen negra, mientras que, h-[200px] es para darle una altura a la imagen de 200px.
+
+Tras esto, nuestro componente se verá de la siguiente forma:
+
+<div align="center" border="1px">
+<img src="./img/r3-01-02.png" width="700">
+</div>
+<br>
+
+
+### Programando el componente PokemonOptions.vue (básico)
+
+En cuanto al componente PokemonOptions crearemos una lista con 4 botones en cada elemento iniciales:
+
+<div align="center" border="1px">
+<img src="./img/r3-02-01.png" width="700">
+</div>
+<br>
+
+
+Una vez realizado, añadiremos unos estilos a los botones de la lista:
+
+```css
+li > button {
+  @apply rounded-full text-white bg-gradient-to-r from-teal-500 via-teal-600 to-teal-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-teal-300 dark:focus:ring-teal-800 font-medium text-sm px-5 py-2.5 text-center me-2 mb-2 ;
+}
+```
+
+<div align="center" border="1px">
+<img src="./img/r3-02-02.png" width="700">
+</div>
+<br>
+
 
 ## Extra
 

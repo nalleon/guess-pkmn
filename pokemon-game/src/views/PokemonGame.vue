@@ -21,7 +21,7 @@
 
     setup() {
       const isVisible = ref(false);
-      return isVisible;
+      return { isVisible };
 
     },
 
