@@ -491,6 +491,21 @@ Además, crearemos el index.ts
 Con este nos referimos, a que tenemos un archivo que importa varias módulos para mayor limpieza y compactación del proyecto.
 
 
+Tras esto, añadiremos al archivo usePokemonGame.ts la referencia del estado del juego.
+
+> ❓ ¿Qué es lo que estamos haciendo con el código hasta ahora?
+
+Únicamente hemos creado una referencia del estado del juego la cual podemos acceder en caulquier parte.
+
+
+Seguidamente, conectaremos la aplicación a la PokeApi. Para ello vamos a utilizar axios.
+
+> ❓ ¿Qué es Axios? ¿Lo has usado antes?
+
+Axios es un cliente HTTP simple que se basa en promesas tanto navegador como para node. En este curso lo hemos utilizado antes también con la PokeApi en otros módulos.
+
+
+Continuando, instalaremos axios así como crear el archivo pokemonApi.ts
 
 
 
