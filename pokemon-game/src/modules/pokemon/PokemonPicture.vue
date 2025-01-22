@@ -23,4 +23,11 @@
 
 
 <style scoped>
+img{
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
 </style>

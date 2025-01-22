@@ -479,6 +479,43 @@ li > button {
 <br>
 
 
+### Reto 04
+
+
+En primer lugar, crearemos el componente usePokemonGame.ts donde colocaremos la lógica de nuestra aplicación. Seguidamente, crearemos un enum para los estados del juego la cual guardaremos en la carpeta interfaz. 
+
+Además, crearemos el index.ts
+
+> ❓ ¿A qué nos referimos con este término en programación y cuáles son sus ventajas? 
+
+Con este nos referimos, a que tenemos un archivo que importa varias módulos para mayor limpieza y compactación del proyecto.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Extra
 
 
