@@ -21,6 +21,10 @@ Repositorio dedicado a un pequeño proyecto del módulo de DAD acerca de adivida
 - [Reto 03](#reto-03)
   - [Programando el componente PokemonPicture.vue (básico)](#programando-el-componente-pokemonpicturevue-básico)
   - [Programando el componente PokemonOptions.vue (básico)](#programando-el-componente-pokemonoptionsvue-básico)
+- [Reto 04](#reto-04)
+  - [Creación de nuevos componentes](#creacion-de-nuevos-componentes)
+  - [Instalando axios](#instalando-axios)
+  - [Tipando la petición a la api](#tipando-la-petición-a-la-api)
 - [Extra](#extra)
 
 <div align="center">
@@ -481,6 +485,7 @@ li > button {
 
 ### Reto 04
 
+#### Creacion de nuevos componentes
 
 En primer lugar, crearemos el componente usePokemonGame.ts donde colocaremos la lógica de nuestra aplicación. Seguidamente, crearemos un enum para los estados del juego la cual guardaremos en la carpeta interfaz. 
 
@@ -495,8 +500,10 @@ Tras esto, añadiremos al archivo usePokemonGame.ts la referencia del estado del
 
 > ❓ ¿Qué es lo que estamos haciendo con el código hasta ahora?
 
-Únicamente hemos creado una referencia del estado del juego la cual podemos acceder en caulquier parte.
+Únicamente hemos creado una referencia del estado del juego la cual podemos acceder en cualquier parte.
 
+
+#### Instalando axios
 
 Seguidamente, conectaremos la aplicación a la PokeApi. Para ello vamos a utilizar axios.
 
@@ -506,6 +513,50 @@ Axios es un cliente HTTP simple que se basa en promesas tanto navegador como par
 
 
 Continuando, instalaremos axios así como crear el archivo pokemonApi.ts
+
+```ts
+
+export class PokemonApi {
+    async get(limit:string) {
+        const response = axios.get('https://pokeapi.co/api/v2/pokemon'+limit + '&offset=0');
+        return await response;
+    }
+}
+```
+
+Ahora, implementaremos una llamada a la api en usePokemonGame.ts y comprobaremos por medio de la consola el corrector funcionamiento:
+
+<div align="center" border="1px">
+<img src="./img/r4-01-01.png" width="700">
+</div>
+<br>
+
+#### Tipando la petición a la api
+
+Una vez comprobado esto, crearemos un type para filtrar los datos que recibimos a los que nos son de interes. Para ello utilizaremos la extension Paste JSON as Code en VSCode. Creando así este type y actualizando el getPokemon();
+
+```ts
+type Pokemon = {
+  name: string;
+  url: string;
+}
+
+type Pokedex = {
+  list : Pokemon[]
+}
+```
+
+```ts
+  const getPokemon = async () => {
+    const pokeApi = new PokemonApi();
+    const response = await pokeApi.get('/?limit=649');
+    const pokedex : Pokedex = response.data;
+    console.log(pokedex.list);
+  }
+```
+
+
+
 
 
 
