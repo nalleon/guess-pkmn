@@ -3,7 +3,9 @@ import axios from 'axios'
 
 export class PokemonApi {
   async get(limit: string) {
-    const response = axios.get('https://pokeapi.co/api/v2/pokemon' + limit + '&offset=0')
-    return await response
+    const response = await axios.get(
+      'https://pokeapi.co/api/v2/pokemon?limit=' + limit + '&offset=0',
+    )
+    return response
   }
 }

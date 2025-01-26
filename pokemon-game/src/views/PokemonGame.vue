@@ -12,8 +12,8 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import PokemonPicture from '../modules/pokemon/PokemonPicture.vue'
-import PokemonOptions from '../modules/pokemon/PokemonOptions.vue'
+import PokemonPicture from '../modules/pokemon/components/PokemonPicture.vue'
+import PokemonOptions from '../modules/pokemon/components/PokemonOptions.vue'
 import { usePokemonGame } from '../modules/pokemon/composables/usePokemonGame'
 export default defineComponent({
   name: 'PokemonGame',
