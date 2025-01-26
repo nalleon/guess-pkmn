@@ -1,31 +1,31 @@
-import {onMounted, ref} from 'vue';
-import { GameStatus } from '../interfaces';
-import { PokemonApi } from '../pokemonApi';
+import { onMounted, ref } from 'vue'
+import { GameStatus } from '../interfaces'
+import { PokemonApi } from '../pokemonApi'
 
 type Pokemon = {
-  name: string;
-  url: string;
+  name: string
+  url: string
 }
 
 type Pokedex = {
-  list : Pokemon[]
+  list: Pokemon[]
 }
 
 export const usePokemonGame = () => {
-  const gameStatus = ref<GameStatus>(GameStatus.Playing);
+  const gameStatus = ref<GameStatus>(GameStatus.Playing)
 
   const getPokemon = async () => {
-    const pokeApi = new PokemonApi();
-    const response = await pokeApi.get('/?limit=649');
-    const pokedex : Pokedex = response.data;
-    console.log(pokedex.list);
+    const pokeApi = new PokemonApi()
+    const response = await pokeApi.get('/?limit=649')
+    const pokedex: Pokedex = response.data
+    console.log(pokedex.list)
   }
 
-  onMounted(()=>{
-    getPokemon();
-  });
+  onMounted(() => {
+    getPokemon()
+  })
 
   return {
-    gameStatus
+    gameStatus,
   }
 }

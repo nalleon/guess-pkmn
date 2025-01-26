@@ -5,35 +5,30 @@
   </section>-->
   <section class="flex flex-col justify-center items-center w-screen h-screen bg-">
     <h1 class="text-3xl">¿Cúal es este pokémon?</h1>
-      <PokemonPicture/>
-      <PokemonOptions/>
+    <PokemonPicture />
+    <PokemonOptions />
   </section>
-
 </template>
 
 <script lang="ts">
-  import { defineComponent, ref } from 'vue';
-  import PokemonPicture from '../modules/pokemon/PokemonPicture.vue';
-  import PokemonOptions from '../modules/pokemon/PokemonOptions.vue';
-  import { usePokemonGame } from '../modules/pokemon/composables/usePokemonGame';
-  export default defineComponent({
-    name:'PokemonGame',
+import { defineComponent, ref } from 'vue'
+import PokemonPicture from '../modules/pokemon/PokemonPicture.vue'
+import PokemonOptions from '../modules/pokemon/PokemonOptions.vue'
+import { usePokemonGame } from '../modules/pokemon/composables/usePokemonGame'
+export default defineComponent({
+  name: 'PokemonGame',
 
-    setup() {
-      const isVisible = ref(false);
-      const {gameStatus} = usePokemonGame();
-      return { isVisible };
+  setup() {
+    const isVisible = ref(false)
+    const { gameStatus } = usePokemonGame()
+    return { isVisible }
+  },
 
-    },
-
-    components: {
-      PokemonPicture,
-      PokemonOptions
-    }
-
-    }
-  )
+  components: {
+    PokemonPicture,
+    PokemonOptions,
+  },
+})
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

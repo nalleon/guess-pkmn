@@ -1,2 +1,1 @@
-export * from './game-status.enun';
-
+export * from './game-status.enun'
