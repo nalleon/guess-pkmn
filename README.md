@@ -1,6 +1,6 @@
 <div align="justify">
 
-# Adivina el pokémon
+# Adivina el pokémon 2
 
 > ✒️ __Autor__:  Nabil L.A. ([@nalleon](https://github.com/nalleon)) 
 
@@ -25,17 +25,18 @@ Repositorio dedicado a un pequeño proyecto del módulo de DAD acerca de adivida
   - [Creación de nuevos componentes](#creacion-de-nuevos-componentes)
   - [Instalando axios](#instalando-axios)
   - [Tipando la petición a la api](#tipando-la-petición-a-la-api)
+- [Reto 05](#reto-05)
+
+- [Reto 06](#reto-06)
+
 - [Extra](#extra)
 
-<div align="center">
 
-[![Tyranitar](https://img.pokemondb.net/sprites/sword-shield/normal/tyranitar.png)](https://pokemondb.net/pokedex/tyranitar)
-[![Hydreigon](https://img.pokemondb.net/sprites/sword-shield/normal/hydreigon.png)](https://pokemondb.net/pokedex/hydreigon)
-[![Arcanine](https://img.pokemondb.net/sprites/sword-shield/normal/arcanine.png)](https://pokemondb.net/pokedex/arcanine)
+<div align=center>
+  <img src="./img/resources/larvitar.gif" width="100">
+  <img src="./img/resources/pupitar.gif" width="100">
+  <img src="./img/resources/tyranitar.gif" width="110">
 </div>
-
-
-## Retos
 
 ### Reto 01
 
@@ -43,15 +44,16 @@ Repositorio dedicado a un pequeño proyecto del módulo de DAD acerca de adivida
 
 En primer lugar configuraremos nuestro proyecto de Vue. En la siguiente imagen tenemos la configuración seleccionada:
 
-***
 
-<br>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
 <div align="center" border="1px">
 <img src="./img/r1-01.png" width="700">
 </div>
 
-***
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 
 <br>
 
@@ -78,14 +80,14 @@ Tras esto realizaremos los comandos mencionados anteriormente para comprobar que
   npm run format
   npm run dev
 ```
-
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 <div align="center" border="1px">
 <img src="./img/r1-02-01.png" width="700">
 <img src="./img/r1-02-02.png" width="700">
 </div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
 
-***
 
 <br>
 
@@ -126,29 +128,38 @@ Se lo podemos indicar añadiendo lang="ts" en el script.
 ```ts
 <script setup lang="ts">
 ```
-
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 <div align="center" border="1px">
 <img src="./img/r1-03-01.png" width="700">
 </div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 ***
 
 Tras esto, añaderemos el mensaje de "Hello World" a App.vue y procederemos a elimiar de assets el estilo base.css junto con el logo.svg y renombraremos main.css a assets.css (además de actualizar o eliminar los imports que nos generen problemas con nuestros cambios).
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
 <div align="center" border="1px">
 <img src="./img/r1-03-02.png" width="700">
 </div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 ***
 
-Para finalizar por este punto, se nos mostrará en el nacegador de esta manera:
+Para finalizar por este punto, se nos mostrará en el navegador de esta manera:
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
 <div align="center" border="1px">
 <img src="./img/r1-03-03.png" width="700">
 </div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 ***
@@ -164,18 +175,18 @@ Continuando implemtaremos el framework de CSS [Tailwind](https://tailwindcss.com
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
-<div align="center" border="1px">
-<img src="./img/r1-03-03.png" width="700">
-</div>
-<br>
 
-***
+
 
 Ahora nos dedicaremos a a configurar el archivo "tailwind.config.js" para poder utilizar el framework en nuestros componentes.
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
 <div align="center" border="1px">
 <img src="./img/r1-04-01.png" width="700">
 </div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 ***
@@ -183,22 +194,34 @@ Ahora nos dedicaremos a a configurar el archivo "tailwind.config.js" para poder 
 Una vez establecida la configuración, añadiremos las etiquetas de tailwind en index.css (un nuevo archivo que crearemos en el directorio src):
 
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
 <div align="center" border="1px">
 <img src="./img/r1-04-02.png" width="700">
 </div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 ***
 
 Finalmente añadiremos unos estilos de tailwind a al etiqueta h1 pa¶æ comprobar la funcionalidad.
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <div align="center" border="1px">
 <img src="./img/r1-04-03.png" width="700">
 </div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 ***
+
+<div align=center>
+  <img src="./img/resources/growlithe.gif" width="100">
+  <img src="./img/resources/arcanine.gif" width="100">
+</div>
 
 
 ### Reto 02
@@ -207,19 +230,28 @@ Finalmente añadiremos unos estilos de tailwind a al etiqueta h1 pa¶æ comproba
 
 Para este reto lo primero que debemos hacere es eliminar la carpeta original de components para remplazarla con nuestro equivalente, ya que, esta no cumplía con la screaming architecture. 
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 
 <div align="center" border="1px">
 <img src="./img/r2-01-01.png" width="700">
 </div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 ***
 
 Tras esto, crearemos una nueva carpeta llamada modules y dentro de este otra llamada pokemon. Observamos como la ruta final sería src/modules/pokemon. 
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <div align="center" border="1px">
 <img src="./img/r2-01-02.png" width="700">
 </div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 ***
@@ -235,9 +267,13 @@ Seguidamente crearemos la carpeta components y ahí a su vez crearemos carpeta v
 
 Dado que se llama PokemonGame, podemos afirmar que se va a encargar de mostrar nuestro juego al cliente.
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <div align="center" border="1px">
 <img src="./img/r2-01-03.png" width="700">
 </div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 ***
@@ -279,10 +315,14 @@ Para ver nuestros cambios en la aplicación debemos de actualizar el App.vue con
 
 </style>
 ```
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
 <div align="center" border="1px">
 <img src="./img/r2-01-04.png" width="700">
 </div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 ***
@@ -315,8 +355,6 @@ La podemos ocultar de varias maneras, pero en este caso hemos optado por utiliza
   )
 </script>
 ```
-
-
 
 Tras esto, añadiremos una nueva seccion de con un titulo h1 y donde añadiremos nuestros nuevos componentes.
 
@@ -404,10 +442,20 @@ Tras esto, añadiremos una nueva seccion de con un titulo h1 y donde añadiremos
 
 En cuanto a la lógica de los componentes, podemos afirmar que PokemonPicture se encargara de mostrar la imagen oscurecidad y revelada del pokemon durante el juego, mientras que, PokemonOptions será para el manejo de las opciones de los nombres.
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <div align="center" border="1px">
 <img src="./img/r2-01-05.png" width="700">
 </div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
+
+<div align=center>
+  <img src="./img/resources/totodile.gif" width="90">
+  <img src="./img/resources/croconaw.gif" width="100">
+  <img src="./img/resources/feraligatr.gif" width="100">
+</div>
 
 ### Reto 03
 
@@ -439,9 +487,14 @@ Lo primero que haremos es importar la imagen de un pokemon desde la pokeapi. En 
   )
 </script>
 ```
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align="center" border="1px">
 <div align="center" border="1px">
 <img src="./img/r3-01-01.png" width="700">
 </div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 Ya que, para la lógica del juego no tiene sentido ver el pokemon como tal, añadiremos unos estilos con TailwindCSS. Utilizaremos las clases: brightness-0 y h-[200px].
@@ -453,9 +506,13 @@ brightness-0 es para bajarle el brillo al 0 y volver la imagen negra, mientras q
 
 Tras esto, nuestro componente se verá de la siguiente forma:
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <div align="center" border="1px">
 <img src="./img/r3-01-02.png" width="700">
 </div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 
@@ -463,9 +520,14 @@ Tras esto, nuestro componente se verá de la siguiente forma:
 
 En cuanto al componente PokemonOptions crearemos una lista con 4 botones en cada elemento iniciales:
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <div align="center" border="1px">
 <img src="./img/r3-02-01.png" width="700">
 </div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 
@@ -477,10 +539,22 @@ li > button {
 }
 ```
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <div align="center" border="1px">
 <img src="./img/r3-02-02.png" width="700">
 </div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
+
+<div align=center>
+  <img src="./img/resources/murkrow.gif" width="90">
+  <img src="./img/resources/crobat.gif" width="100">
+  <img src="./img/resources/skarmory.gif" width="100">
+</div>
 
 
 ### Reto 04
@@ -526,9 +600,14 @@ export class PokemonApi {
 
 Ahora, implementaremos una llamada a la api en usePokemonGame.ts y comprobaremos por medio de la consola el corrector funcionamiento:
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <div align="center" border="1px">
 <img src="./img/r4-01-01.png" width="700">
 </div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 <br>
 
 #### Tipando la petición a la api
@@ -555,6 +634,63 @@ type Pokedex = {
   }
 ```
 
+<br>
+
+<div align=center>
+  <img src="./img/resources/togepi.gif" width="90">
+  <img src="./img/resources/togetic.gif" width="90">
+</div>
+
+### Reto 05
+
+
+Lo primero que haremos para cumplir este reto es modificar el método getPokemon en usePokemonGame.ts. Para ellos crearemos una interfaz para los pokémon:
+
+```ts
+export interface Pokemon {
+    id: number;
+    name: string;
+}
+```
+
+La aplicación de esta a getPokemon se hará de la siguiente manera, además crearremos un type auxiliar para tipar el recorrido de cada elemento del array.
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r5-01-01.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+
+> ❓ ¿Qué es lo que estamos haciendo? ¿Para qué sirve la línea de código: const id = url[url.length - 2] ?? 0;?
+
+Simplemente estamos mappeando los elementos que hemos recogido con nuestra peticion a la api para asignarlos con el type que queremos. Respondiendo a la segunda pregunta, únicamente estamos obteniendo el id/numero de la pokedex del pokemon, ya que al final de la url lo podemos encontrar. Estamos cortando en la última posición del array dividido por '/' y cogiendo el número, en el caso de que no lo encontraramos le asignariamos el valor 0.
+
+
+Seguidamente, vamos a modificar onMounter para recibir la lista de Pokémon:
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r5-01-02.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+
+
+<div align=center>
+  <img src="./img/resources/abra.gif" width="90">
+  <img src="./img/resources/kadabra.gif" width="100">
+  <img src="./img/resources/alakazam.gif" width="100">
+</div>
+
+### Reto 06
 
 
 
@@ -568,19 +704,12 @@ type Pokedex = {
 
 
 
+<div align=center>
+  <img src="./img/resources/jolteon.gif" width="90">
+  <img src="./img/resources/eevee.gif" width="90">  
+  <img src="./img/resources/espeon.gif" width="90">
 
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
 ## Extra
 
