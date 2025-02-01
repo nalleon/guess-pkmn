@@ -128,13 +128,7 @@ Se lo podemos indicar añadiendo lang="ts" en el script.
 ```ts
 <script setup lang="ts">
 ```
-<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
-<div align="center" border="1px">
-<img src="./img/r1-03-01.png" width="700">
-</div>
-<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-<br>
 
 ***
 
@@ -282,12 +276,19 @@ Dado que se llama PokemonGame, podemos afirmar que se va a encargar de mostrar n
 
 Tras generar la estructura básica del componente con la extension Vue3 Composition Snippets y el snippet vcc para definir que es un componente de composition. Seguidamente añadiremos la siguiente etiqueta HTML y con el siguiente contenido:
 
-```vue
-<section class="flex flex-col justify-center items-center w-screen h-screen">
-  <h1 class="text-3xl"> Espere por favor</h1>
-  <h3 class="animate-pulse">Cargando Pokemón</h3>
-</section>
-```
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align="center" border="1px">
+<img src="./img/r2-01-00.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
 
 > ❓ ¿Para qué sirven las clases que hemos añadido?
 
@@ -296,25 +297,18 @@ Hemos añadidos clases de Tailwind para darle unos estilos a nuestra seccción.
 
 Para ver nuestros cambios en la aplicación debemos de actualizar el App.vue con nuestro componente:
 
-```vue
-<template>
-    <PokemonGame/>
-</template>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-<script lang="ts">
-  import PokemonGame from './components/views/PokemonGame.vue'
+<div align="center" border="1px">
+<img src="./img/r2-01-00.5.png" width="700">
+</div>
 
-  export default {
-    components: {
-      PokemonGame
-    }
-  }
-</script>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-<style scoped>
+<br>
 
-</style>
-```
+***
+
 <hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
 <div align="center" border="1px">
@@ -490,7 +484,6 @@ Lo primero que haremos es importar la imagen de un pokemon desde la pokeapi. En 
 <hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
 <div align="center" border="1px">
-<div align="center" border="1px">
 <img src="./img/r3-01-01.png" width="700">
 </div>
 <hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
@@ -550,12 +543,13 @@ li > button {
 
 <br>
 
-<div align=center>
+<div align="center">
   <img src="./img/resources/murkrow.gif" width="90">
   <img src="./img/resources/crobat.gif" width="100">
   <img src="./img/resources/skarmory.gif" width="100">
 </div>
 
+<br>
 
 ### Reto 04
 
@@ -671,7 +665,7 @@ La aplicación de esta a getPokemon se hará de la siguiente manera, además cre
 Simplemente estamos mappeando los elementos que hemos recogido con nuestra peticion a la api para asignarlos con el type que queremos. Respondiendo a la segunda pregunta, únicamente estamos obteniendo el id/numero de la pokedex del pokemon, ya que al final de la url lo podemos encontrar. Estamos cortando en la última posición del array dividido por '/' y cogiendo el número, en el caso de que no lo encontraramos le asignariamos el valor 0.
 
 
-Seguidamente, vamos a modificar onMounter para recibir la lista de Pokémon:
+Seguidamente, vamos a modificar onMounted para recibir la lista de Pokémon:
 
 <hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
@@ -682,9 +676,52 @@ Seguidamente, vamos a modificar onMounter para recibir la lista de Pokémon:
 
 <hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
+<br>
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
 <div align=center>
+  <img src="./img/r5-01-03.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+Finalmente por parte de este reto, vamos a implementar una función para poder obtener los pokemon en un orden aleatorio. 
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r5-01-04.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r5-01-05.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+<div align="center">
   <img src="./img/resources/abra.gif" width="90">
   <img src="./img/resources/kadabra.gif" width="100">
   <img src="./img/resources/alakazam.gif" width="100">
@@ -692,26 +729,341 @@ Seguidamente, vamos a modificar onMounter para recibir la lista de Pokémon:
 
 ### Reto 06
 
+#### Propiedades reactivas (usePokemonGame)
+
+Para llevar a cabo este último reto comenzaremos por determinar varias propiedades computadas que serán esenciales para el juego (como por ejemplo cuando la página aún está cargando).
+
+> ❓ ¿Qué es una propiedad computada?
+
+Una propiedad computada en Vue es una propiedad reactiva que se calcula automáticamente en función de otras variables reactivas. Se usa cuando necesitas derivar un valor basado en cambios de estado, sin tener que actualizarlo manualmente. 
+
+Seguidamente, en usePokemonGame.ts crearemos una llama isLoading para manejar la carga de nuestra página.
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r6-01-01.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+Tras esto lo podemos añadir a la condición v-if en el componente PokemonGame.vue. Además, añadiremos una promesa a onMounted() con un timeout para comprobar que efectivamente la propiedad conmutada esta haciendo su función correctamente.
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r6-01-03.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r6-01-02.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+
+Ahora vamos a crear otra propiedad reactiva llamada pokemonOptions, la cual se encargará de mostrar las 4 posibles opciones de diferentes pokemon a elegir. Para ello crearemos una nueva función para manejarlas:
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r6-01-04.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+> ❓ ¿Cómo funciona este fragmento de código?
+
+El código anterior se encarga de segmentar en un nuevo array las opciones de los pokemon que van a salir cómo posibles opciones. 
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r6-01-05.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+
+Por otro lado ahora debemos de determinar cual es el pokémon correcto. Para ello crearemos un nuevo método que se encargue de seleccionarlo:
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r6-01-06.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+Tras esto comprobaremos en el navegador y su consola que los datos del pokemon se muestran y que, además, este no es el primero del array:
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r6-01-07.png" width="700">
+</div>
+
+
+<div align=center>
+  <img src="./img/r6-01-08.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+Una vez comprobado el punto anterios, ahora debemos de conseguir la correspondiente foto del pokémon, para ello haremos uso de las props para enviarle al componente hijo (PokemonPicture) el id del pokemon seleccionado.
 
 
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r6-01-10.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
 
 
+<div align=center>
+  <img src="./img/r6-01-09.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+Tras esto, vamos a abordar el cmabiar la foto del pokemon si se ha acertado, para ello enviaremos por props otro atributo llamado showPokemon, el cual será un boolean que podrá o no aparecer.
 
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r6-01-11.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-12.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-13.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+Por otro lado nos queda actualizar los botones del componente PokemonOptions para añadirle los nombre de los pokémon. Para ello volveremos a utilizar las props para enviar el array de opciones el cuál simplemente recorreremos con un v-for.
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-15.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-14.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+Seguidamente, implemntaremos un defineEmits para recoger la información de la acción del usuario por medio de un evento de click en cualquiera de los botones. Para ello debemos de modificar tanto el componente de PokemonOptions como el de PokemonGame.
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-16.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-17.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-18.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
 
 
+Tras haber conseguido esto, ahora toca centrarnos en la lógica del juego, es decir en como determinamos si se ha ganado o no. Para ello simplemente comprobaremos que la id del pokemon sea igual a la de la opción seleccionada, cambiando el estado del juego a ganado y mostrando una animación de con canvas-confetti para resaltar la victoría. En caso contrario, se revelará el pokémon únicamente.
 
+Cabe destacar que también debemos de desactivar los botones una vez se haya escogido una opción independientemente del resultado. Para esto es importante usar un propiedad reactiva.
+
+
+***
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-19.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-20.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-21.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
+
+#### Resaltar las opciones
+
+Para llevarlo acabo jugaremos con los estilos de los botones y utilizaremos props para enviar el id de la respuesta correcta para comprobar que estilo cargará nuestro botón.
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-22.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-23.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-24.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/r6-01-25.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
 
 
 <div align=center>
   <img src="./img/resources/jolteon.gif" width="90">
   <img src="./img/resources/eevee.gif" width="90">  
   <img src="./img/resources/espeon.gif" width="90">
-
 </div>
 
-## Extra
+### Extra
+
+#### Reinicio del juego
 
 
 </div>

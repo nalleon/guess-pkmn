@@ -1,18 +1,36 @@
 <template>
   <section class="flex flex-col justify-center items-center">
-    <img class="brightness-0 h-[200px]" :src="url" />
+    <img v-if="!showPokemon" class="brightness-0 h-[200px]" :src="url" alt="pokemon image"/>
+    <img v-else class="h-[200px]" :src="url" alt="pokemon image"/>
   </section>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
+
+interface Props {
+  pokemonId: number;
+  showPokemon?: boolean;
+}
 
 export default defineComponent({
   name: 'PokemonPicture',
-  setup() {
-    const url =
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/248.png'
+  props: {
+    pokemonId: {
+      type: Number,
+      required: true
+    },
+    showPokemon:{
+      type: Boolean,
+      required:false,
+    }
+  },
 
+  setup(props) {
+    const url = computed(
+      () => 
+      `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props.pokemonId}.png`
+    )
     return {
       url,
     }
