@@ -325,114 +325,46 @@ Para ver nuestros cambios en la aplicación debemos de actualizar el App.vue con
 
 La podemos ocultar de varias maneras, pero en este caso hemos optado por utilizar v-show.
 
-```vue
-<template>
-  <section v-show="isVisible" class="flex flex-col justify-center items-center w-screen h-screen">
-    <h1 class="text-3xl"> Espere por favor</h1>
-    <h3 class="animate-pulse">Cargando Pokemón</h3>
-  </section>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-</template>
+<div align="center" border="1px">
+<img src="./img/r2-01-045.png" width="700">
+</div>
 
-<script lang="ts">
-  import { defineComponent, ref } from 'vue';
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-  export default defineComponent({
-    name:'PokemonGame',
+<br>
 
-    setup() {
-      const isVisible = ref(false);
-      return isVisible;
-    }
-
-    }
-  )
-</script>
-```
+***
 
 Tras esto, añadiremos una nueva seccion de con un titulo h1 y donde añadiremos nuestros nuevos componentes.
 
-```vue
-<template>
-  <section v-show="isVisible" class="flex flex-col justify-center items-center w-screen h-screen">
-    <h1 class="text-3xl"> Espere por favor</h1>
-    <h3 class="animate-pulse">Cargando Pokemón</h3>
-  </section>
-  <section class="flex flex-col justify-center items-center w-screen h-screen">
-    <h1 class="text-3xl">¿Cúal es este pokémon?</h1>
-      <PokemonPicture/>
-      <PokemonOptions/>
-  </section>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-</template>
+<div align="center" border="1px">
+<img src="./img/r2-01-075.png" width="700">
+</div>
 
-<script lang="ts">
-  import { defineComponent, ref } from 'vue';
-  import PokemonPicture from '../components/pokemon/PokemonPicture.vue';
-  import PokemonOptions from '../components/pokemon/PokemonOptions.vue';
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-  export default defineComponent({
-    name:'PokemonGame',
+<br>
 
-    setup() {
-      const isVisible = ref(false);
-      return isVisible;
-    },
-
-    components: {
-      PokemonPicture,
-      PokemonOptions
-    }
-
-    }
-  )
-</script>
-```
+***
 
 - Componentes:
 
 
-```vue
-<template>
-    <div>
-        <h2>En construccion</h2>
-    </div>
-</template>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-<script lang="ts">
-  import { defineComponent } from 'vue';
+<div align="center" border="1px">
+<img src="./img/r2-01-095.png" width="700">
+</div>
 
-  export default defineComponent({
-    name:'PokemonOptions',
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-    }
-  )
-</script>
+<br>
 
-<style scoped>
-</style>
-
-<template>
-    <div>
-        <h2>En construccion</h2>
-    </div>
-</template>
-
-
-<script lang="ts">
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    name:'PokemonPicture',
-
-    }
-  )
-</script>
-
-
-<style scoped>
-</style>
-```
+***
 
 En cuanto a la lógica de los componentes, podemos afirmar que PokemonPicture se encargara de mostrar la imagen oscurecidad y revelada del pokemon durante el juego, mientras que, PokemonOptions será para el manejo de las opciones de los nombres.
 
@@ -457,30 +389,16 @@ En cuanto a la lógica de los componentes, podemos afirmar que PokemonPicture se
 
 Lo primero que haremos es importar la imagen de un pokemon desde la pokeapi. En este caso hemos escogido al pokemon 248, Tyranitar. Ya que aún no estamos trabajando con axios para las peticiones a la api, simplemente añadiremos la imagen.
 
-```vue
-<template>
-    <section class="flex flex-col justify-center items-center">
-      <img :src=url>
-    </section>
-</template>
 
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-<script lang="ts">
-  import { defineComponent } from 'vue';
+<div align="center" border="1px">
+<img src="./img/r3-01-00.png" width="700">
+</div>
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-  export default defineComponent({
-    name:'PokemonPicture',
-    setup() {
-        const url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/248.png'
+<br>
 
-        return {
-          url
-        }
-      },
-    }
-  )
-</script>
-```
 <hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
 <div align="center" border="1px">
@@ -526,11 +444,17 @@ En cuanto al componente PokemonOptions crearemos una lista con 4 botones en cada
 
 Una vez realizado, añadiremos unos estilos a los botones de la lista:
 
-```css
-li > button {
-  @apply rounded-full text-white bg-gradient-to-r from-teal-500 via-teal-600 to-teal-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-teal-300 dark:focus:ring-teal-800 font-medium text-sm px-5 py-2.5 text-center me-2 mb-2 ;
-}
-```
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align="center" border="1px">
+<img src="./img/r3-02-015.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
 
 <hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
@@ -582,15 +506,15 @@ Axios es un cliente HTTP simple que se basa en promesas tanto navegador como par
 
 Continuando, instalaremos axios así como crear el archivo pokemonApi.ts
 
-```ts
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-export class PokemonApi {
-    async get(limit:string) {
-        const response = axios.get('https://pokeapi.co/api/v2/pokemon'+limit + '&offset=0');
-        return await response;
-    }
-}
-```
+<div align="center" border="1px">
+<img src="./img/r4-01-00.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
 
 Ahora, implementaremos una llamada a la api en usePokemonGame.ts y comprobaremos por medio de la consola el corrector funcionamiento:
 
@@ -608,25 +532,15 @@ Ahora, implementaremos una llamada a la api en usePokemonGame.ts y comprobaremos
 
 Una vez comprobado esto, crearemos un type para filtrar los datos que recibimos a los que nos son de interes. Para ello utilizaremos la extension Paste JSON as Code en VSCode. Creando así este type y actualizando el getPokemon();
 
-```ts
-type Pokemon = {
-  name: string;
-  url: string;
-}
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
 
-type Pokedex = {
-  list : Pokemon[]
-}
-```
+<div align="center" border="1px">
+<img src="./img/r4-01-015.png" width="700">
+</div>
 
-```ts
-  const getPokemon = async () => {
-    const pokeApi = new PokemonApi();
-    const response = await pokeApi.get('/?limit=649');
-    const pokedex : Pokedex = response.data;
-    console.log(pokedex.list);
-  }
-```
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
 
 <br>
 
@@ -640,12 +554,16 @@ type Pokedex = {
 
 Lo primero que haremos para cumplir este reto es modificar el método getPokemon en usePokemonGame.ts. Para ellos crearemos una interfaz para los pokémon:
 
-```ts
-export interface Pokemon {
-    id: number;
-    name: string;
-}
-```
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<div align=center>
+  <img src="./img/r5-01-00.png" width="700">
+</div>
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
 
 La aplicación de esta a getPokemon se hará de la siguiente manera, además crearremos un type auxiliar para tipar el recorrido de cada elemento del array.
 
@@ -1065,5 +983,53 @@ Para llevarlo acabo jugaremos con los estilos de los botones y utilizaremos prop
 
 #### Reinicio del juego
 
+Para esta implementación crearemos un nuevo metodo que reinicie todos los valores clave del juego, el cual será llamado en un nuevo boton. Este botón será mostrado única y exclusivamente cuando la partida haya finalizado haciendo uso de la directiva v-if.
+
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/rE-01-01.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/rE-01-02.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/rE-01-03.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+<div align=center>
+  <img src="./img/rE-01-04.png" width="700">
+</div>
+
+<hr style="border: 1px solid #729eb2; width: 50%; margin: 20px auto;">
+
+<br>
+
+***
 
 </div>
