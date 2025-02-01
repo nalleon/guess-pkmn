@@ -1,6 +1,6 @@
 <div align="justify">
 
-# Adivina el pokémon 2
+# Adivina el pokémon 
 
 > ✒️ __Autor__:  Nabil L.A. ([@nalleon](https://github.com/nalleon)) 
 
