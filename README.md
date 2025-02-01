@@ -4,7 +4,7 @@
 
 > ✒️ __Autor__:  Nabil L.A. ([@nalleon](https://github.com/nalleon)) 
 
-Repositorio dedicado a un pequeño proyecto del módulo de DAD acerca de adividar un pokémon.
+Repositorio dedicado a un pequeño proyecto del módulo de DAD acerca del juego de adividar un pokémon basado en su silueta.
 
 <div align="center">
 <img src="./img/cover.png">
@@ -26,10 +26,12 @@ Repositorio dedicado a un pequeño proyecto del módulo de DAD acerca de adivida
   - [Instalando axios](#instalando-axios)
   - [Tipando la petición a la api](#tipando-la-petición-a-la-api)
 - [Reto 05](#reto-05)
-
+  - [Modificando la petición a la API](#modificando-la-petición-a-la-api)
 - [Reto 06](#reto-06)
-
+  - [Implementación de propiedades reactivas](#implementación-de-propiedades-reactivas)
 - [Extra](#extra)
+  - [Reinicio del juego](#reinicio-del-juego)
+
 
 
 <div align=center>
@@ -551,6 +553,7 @@ Una vez comprobado esto, crearemos un type para filtrar los datos que recibimos 
 
 ### Reto 05
 
+#### Modificando la petición a la API
 
 Lo primero que haremos para cumplir este reto es modificar el método getPokemon en usePokemonGame.ts. Para ellos crearemos una interfaz para los pokémon:
 
@@ -647,7 +650,7 @@ Finalmente por parte de este reto, vamos a implementar una función para poder o
 
 ### Reto 06
 
-#### Propiedades reactivas (usePokemonGame)
+#### Implementación de propiedades reactivas
 
 Para llevar a cabo este último reto comenzaremos por determinar varias propiedades computadas que serán esenciales para el juego (como por ejemplo cuando la página aún está cargando).
 
